@@ -1,18 +1,28 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
- */
+const path = require("path");
 
-/**
- * @type {import('gatsby').GatsbyNode['createPages']}
- */
-exports.createPages = async ({ actions }) => {
-  const { createPage } = actions
-  createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
-  })
-}
+exports.createPages = async ({ graphql, actions }) => {
+  const { data } = await graphql(`
+    query QueryData {
+      countriesData {
+        countries {
+          name
+          capital
+          code
+          currency
+        }
+      }
+    }
+  `);
+
+  data.countriesData.countries.forEach(country => {
+    const { name, capital, code, currency } = country;
+
+    actions.createPage({
+      path: `/${name.toLowerCase()}`,
+      component: path.resolve("./src/templates/innerPage.js"),
+      context: { name, capital, code, currency },
+    });
+  });
+
+  // console.log(`!!!!!!!!!!!!!!!!data!!!!!!!!!!!!!!!!! >>> `, data.countries);
+};
