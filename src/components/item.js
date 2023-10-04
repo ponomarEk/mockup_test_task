@@ -1,9 +1,9 @@
 import * as React from "react";
 
-import "../styles/item.css";
+import * as styles from "../styles/item.module.css";
 
 const Item = ({ name }) => {
-  return <div className="item">{name}</div>;
+  return <div className={styles.item}>{name}</div>;
 };
 
 export default Item;

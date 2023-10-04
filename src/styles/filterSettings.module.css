@@ -1,8 +1,8 @@
-.filter-settings {
+.filter_settings {
   display: flex;
   justify-content: space-between;
 }
 
-.filter-action {
+.filter_action {
   flex-basis: 30%;
 }
