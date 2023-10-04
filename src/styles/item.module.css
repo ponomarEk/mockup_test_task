@@ -1,0 +1,8 @@
+.item {
+  flex-basis: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(3, 18, 137);
+  margin-bottom: 10px;
+}
