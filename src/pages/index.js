@@ -1,19 +1,29 @@
 import * as React from "react";
+import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import ItemsList from "../components/itemsList";
 import FilterSettings from "../components/filterSettings";
 
-const data = ["item1", "item2", "item3", "item4", "item5", "item6", "item7"];
-
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <FilterSettings />
-    <ItemsList data={data} />
+    <ItemsList countriesData={data.countriesData} />
   </Layout>
 );
 
 export const Head = () => <Seo title="Home" />;
+
+export const itemsListQuery = graphql`
+  query QueryData {
+    countriesData {
+      countries {
+        name
+        code
+      }
+    }
+  }
+`;
 
 export default IndexPage;
