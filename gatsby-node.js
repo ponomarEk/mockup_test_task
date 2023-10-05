@@ -24,5 +24,4 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  // console.log(`!!!!!!!!!!!!!!!!data!!!!!!!!!!!!!!!!! >>> `, data.countries);
 };
