@@ -1,18 +1,19 @@
 import React from "react";
 
-import { DEFAULT_PAGE } from "../../constans";
+import { DEFAULT_PAGE } from "../../../constants";
 
-import { useCharacters } from "../hooks/useCharacters";
+import { useCharacters } from "../../hooks";
 
-import * as styles from "../styles/components/Pagination.module.css";
+import * as styles from "./Pagination.module.css";
 
 const Pagination = ({ totalPages }) => {
-  const { handleNextPage, handlePrevPage, page } = useCharacters();
+  const { handleClickNextPage, handleClickPrevPage, page } = useCharacters();
+
   return (
     <div className={styles.pagination}>
       <button
         className={styles.paginationButton}
-        onClick={handlePrevPage}
+        onClick={handleClickPrevPage}
         disabled={page === DEFAULT_PAGE}
       >
         Prev
@@ -22,7 +23,7 @@ const Pagination = ({ totalPages }) => {
       </span>
       <button
         className={styles.paginationButton}
-        onClick={handleNextPage}
+        onClick={handleClickNextPage}
         disabled={page === totalPages}
       >
         Next

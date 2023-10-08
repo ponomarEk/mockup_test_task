@@ -1,15 +1,15 @@
 import React from "react";
 
-import Search from "./Search";
+import Search from "../Search/Search";
 
-import * as styles from "../styles/components/Header.module.css";
+import * as styles from "./Header.module.css";
 
-const Header = ({ onSearch, setCharactersPage }) => {
+const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerContent}>
         <h1 className={styles.title}>Rick and Morty Gatsby Prod</h1>
-        <Search onSearch={onSearch} setCharactersPage={setCharactersPage} />
+        <Search />
       </div>
     </header>
   );

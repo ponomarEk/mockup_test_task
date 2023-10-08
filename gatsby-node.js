@@ -1,3 +1,5 @@
+// NOTE: Logic for creating special rout for each character
+
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage } = actions;
 

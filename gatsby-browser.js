@@ -1,10 +1,10 @@
 import React from "react";
 
 import { CharactersProvider } from "./src/hooks/useCharacters";
-import { LoadingProvider } from "./src/hooks/useLoadingData";
+import { LoadingIndicatorProvider } from "./src/hooks/useLoadingIndicator";
 
 export const wrapRootElement = ({ element }) => (
-  <LoadingProvider>
+  <LoadingIndicatorProvider>
     <CharactersProvider>{element}</CharactersProvider>
-  </LoadingProvider>
+  </LoadingIndicatorProvider>
 );

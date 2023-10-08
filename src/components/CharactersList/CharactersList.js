@@ -1,24 +1,20 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import * as styles from "../styles/components/CharactersList.module.css";
+import * as styles from "./CharactersList.module.css";
 
 const CharactersList = ({ characters }) => {
   return (
     <div className={styles.character_list}>
       {characters.length ? (
-        characters.map((character) => (
+        characters.map(({ name, id, image }) => (
           <Link
-            to={`/character/${character.id}`}
-            key={character.id}
+            to={`/character/${id}`}
+            key={id}
             className={styles.character_item}
           >
-            <img
-              src={character.image}
-              alt={character.name}
-              className={styles.character_image}
-            />
-            <p className={styles.character_name}>{character.name}</p>
+            <img src={image} alt={name} className={styles.character_image} />
+            <p className={styles.character_name}>{name}</p>
           </Link>
         ))
       ) : (

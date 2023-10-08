@@ -1,8 +1,8 @@
 import React from "react";
 
-import * as styles from "../styles/components/GlobalSpinner.module.css";
+import * as styles from "./LoadingIndicator.module.css";
 
-const GlobalSpinner = () => {
+const LoadingIndicator = () => {
   return (
     <div className={styles.spinner_overlay}>
       <div className={styles.spinner}></div>
@@ -10,4 +10,4 @@ const GlobalSpinner = () => {
   );
 };
 
-export default GlobalSpinner;
+export default LoadingIndicator;

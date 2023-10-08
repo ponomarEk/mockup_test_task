@@ -10,7 +10,9 @@ const STATUS = Object.freeze({
 
 const DEFAULT_PAGE = 1;
 
-const API = "https://rickandmortyapi.com/graphql";
+const DEFAULT_CHARACTER_TYPE = "None";
+
+const API_BASE_URL = "https://rickandmortyapi.com/graphql";
 
 const API_CONFIG = Object.freeze({
   method: "POST",
@@ -19,4 +21,11 @@ const API_CONFIG = Object.freeze({
   },
 });
 
-export { GENDERS, STATUS, DEFAULT_PAGE, API, API_CONFIG };
+export {
+  GENDERS,
+  STATUS,
+  DEFAULT_PAGE,
+  DEFAULT_CHARACTER_TYPE,
+  API_BASE_URL,
+  API_CONFIG,
+};

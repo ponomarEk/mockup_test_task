@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 
-import { DEFAULT_PAGE } from "../../constans";
-import useLoading from "./useLoadingData";
+import { DEFAULT_PAGE } from "../../constants";
 
 const CharactersContext = createContext({
   page: DEFAULT_PAGE,
@@ -11,7 +10,6 @@ const CharactersContext = createContext({
 });
 
 export const CharactersProvider = ({ children }) => {
-  const { startLoading } = useLoading();
   const [page, setPage] = useState(DEFAULT_PAGE);
   const [searchText, setSearchText] = useState("");
   const [filters, setFilters] = useState({
@@ -19,31 +17,36 @@ export const CharactersProvider = ({ children }) => {
     status: "",
   });
 
-  const handleNextPage = () => {
+  const handleClickNextPage = () => {
     setPage((prevPage) => prevPage + 1);
-    startLoading();
   };
 
-  const handlePrevPage = () => {
+  const handleClickPrevPage = () => {
     setPage((prevPage) => prevPage - 1);
-    startLoading();
   };
 
-  const handleSearch = (value) => {
+  const handleClickSearch = (value) => {
     setSearchText(value);
-    startLoading();
   };
 
-  const handleFilterChange = (name, value) => {
+  const handleChangeFilter = (name, value) => {
     setFilters((prevFilters) => ({
       ...prevFilters,
       [name]: value,
     }));
-    startLoading();
   };
 
-  const resetPage = () => {
+  const handleResetPage = () => {
     setPage(DEFAULT_PAGE);
+  };
+
+  const handleResetAllFilters = () => {
+    handleResetPage();
+    setFilters({
+      gender: "",
+      status: "",
+    });
+    setSearchText("");
   };
 
   const values = {
@@ -51,11 +54,12 @@ export const CharactersProvider = ({ children }) => {
     searchText,
     gender: filters.gender,
     status: filters.status,
-    resetPage,
-    handleFilterChange,
-    handleNextPage,
-    handlePrevPage,
-    handleSearch,
+    handleResetPage,
+    handleChangeFilter,
+    handleClickNextPage,
+    handleClickPrevPage,
+    handleClickSearch,
+    handleResetAllFilters,
   };
 
   return (

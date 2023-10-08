@@ -1,4 +1,4 @@
-import { API, API_CONFIG } from "../../constans";
+import { API_BASE_URL, API_CONFIG } from "../../constants";
 
 export const getCharactersList = async ({
   page,
@@ -7,7 +7,7 @@ export const getCharactersList = async ({
   status,
 }) => {
   try {
-    const response = await fetch(API, {
+    const response = await fetch(API_BASE_URL, {
       ...API_CONFIG,
       body: JSON.stringify({
         query: `
@@ -41,7 +41,7 @@ export const getCharactersList = async ({
 
 export const getCharacterById = async (id) => {
   try {
-    const response = await fetch(API, {
+    const response = await fetch(API_BASE_URL, {
       ...API_CONFIG,
       body: JSON.stringify({
         query: `
