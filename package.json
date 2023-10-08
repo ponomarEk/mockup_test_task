@@ -6,6 +6,7 @@
   "author": "Oleksandr Ponomarenko <ponomarek91@gmail.com>",
   "dependencies": {
     "gatsby": "^5.12.4",
+    "gatsby-plugin-image": "^3.12.0",
     "gatsby-plugin-manifest": "^5.12.0",
     "gatsby-plugin-sharp": "^5.12.0",
     "gatsby-source-filesystem": "^5.12.0",
