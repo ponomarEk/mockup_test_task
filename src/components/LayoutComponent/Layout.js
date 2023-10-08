@@ -2,8 +2,8 @@ import React from "react";
 
 import { useLoadingIndicator } from "../../hooks";
 
-import Header from "../Header/Header";
-import LoadingIndicator from "../LoadingIndicator/LoadingIndicator";
+import { Header } from "../Header";
+import { LoadingIndicator } from "../LoadingIndicator";
 
 import * as styles from "./Layout.module.css";
 
