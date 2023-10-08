@@ -10,8 +10,10 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        // The unique name for each instance
+        name: `pages`,
+        // Path to the directory
+        path: `${__dirname}/src/pages/`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -19,9 +21,9 @@ module.exports = {
     {
       resolve: `gatsby-source-graphql`,
       options: {
-        typeName: `CountriesData`,
-        fieldName: `countriesData`,
-        url: `https://countries.trevorblades.com/graphql`,
+        typeName: `RickAndMorty`,
+        fieldName: `rickAndMorty`,
+        url: `https://rickandmortyapi.com/graphql`,
       },
     },
   ],

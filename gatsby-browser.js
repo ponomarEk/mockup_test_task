@@ -1,7 +1,10 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
- */
+import React from "react";
 
-// You can delete this file if you're not using it
+import { CharactersProvider } from "./src/hooks/useCharacters";
+import { LoadingProvider } from "./src/hooks/useLoadingData";
+
+export const wrapRootElement = ({ element }) => (
+  <LoadingProvider>
+    <CharactersProvider>{element}</CharactersProvider>
+  </LoadingProvider>
+);

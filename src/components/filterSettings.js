@@ -1,23 +1,15 @@
-import * as React from "react";
+import React from "react";
+import { STATUS, GENDERS } from "../../constans";
+import SelectFilter from "./SelectFilter";
 
-import * as styles from "../styles/filterSettings.module.css";
+import * as styles from "../styles/FilterSettings.module.css";
 
 const FilterSettings = () => {
   return (
-    <>
-      <h3>Filter Settings</h3>
-      <div className={styles.filter_settings}>
-        <select className={styles.filter_action}>
-          <option defaultChecked>Empty</option>
-        </select>
-        <select className={styles.filter_action}>
-          <option defaultChecked>Empty</option>
-        </select>
-        <select className={styles.filter_action}>
-          <option defaultChecked>Empty</option>
-        </select>
-      </div>
-    </>
+    <div className={styles.filter_settings}>
+      <SelectFilter selectType={GENDERS} />
+      <SelectFilter selectType={STATUS} />
+    </div>
   );
 };
 

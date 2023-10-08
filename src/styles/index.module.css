@@ -1,6 +1,6 @@
-.items_list {
+.settings_wrapper {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  padding: 40px 10px;
   align-items: center;
 }

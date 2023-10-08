@@ -1,0 +1,41 @@
+.filter_action {
+  appearance: none;
+  padding: 8px 16px;
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #3498db;
+  cursor: pointer;
+  font-size: 16px;
+  width: 200px;
+  outline: none;
+}
+
+.filter_label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.filter_action:hover {
+  background-color: #f0f0f0;
+}
+
+.filter_action::after {
+  content: "▼";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Стилі для вигляду опцій */
+.filter_action option {
+  background-color: #fff;
+  color: #3498db;
+}
+
+/* Стилі для вигляду підсвічування опцій при наведенні миші */
+.filter_action option:hover {
+  background-color: #f0f0f0;
+}

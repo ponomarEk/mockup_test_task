@@ -1,19 +1,16 @@
-import * as React from "react";
+import React from "react";
 
-import * as styles from "../styles/header.module.css";
-import useQueryParam from "../hooks/useQueryParam";
+import Search from "./Search";
 
-const Header = ({ siteTitle }) => {
-  const [search, setSearch] = useQueryParam("search", "");
+import * as styles from "../styles/Header.module.css";
+
+const Header = ({ onSearch, setCharactersPage }) => {
   return (
     <header className={styles.header}>
-      <h2>{siteTitle}</h2>
-      <input
-        type="search"
-        placeholder="Search..."
-        value={search}
-        onChange={({ target: { value } }) => setSearch(value)}
-      />
+      <div className={styles.headerContent}>
+        <h1 className={styles.title}>Rick and Morty Gatsby Prod</h1>
+        <Search onSearch={onSearch} setCharactersPage={setCharactersPage} />
+      </div>
     </header>
   );
 };

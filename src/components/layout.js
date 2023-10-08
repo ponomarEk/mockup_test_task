@@ -1,29 +1,20 @@
-import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import React from "react";
 
-import * as styles from "../styles/layout.module.css";
+import useLoading from "../hooks/useLoadingData";
 
-import Header from "./header";
+import Header from "./Header";
+import GlobalSpinner from "./GlobalSpinner";
+
+import * as styles from "../styles/Layout.module.css";
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
+  const { isLoading } = useLoading();
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div className={styles.content}>
-        <main>{children}</main>
-        <footer></footer>
-      </div>
-    </>
+    <div className={styles.layout}>
+      <Header />
+      <main>{children}</main>
+      {isLoading && <GlobalSpinner />}
+    </div>
   );
 };
 
