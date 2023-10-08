@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import useLoading from "../hooks/useLoadingData";
 import { getCharacterById } from "../services/characterService";
 import Layout from "../components/Layout";
+import Seo from "../components/Seo";
 
 import * as styles from "../styles/pages/character.module.css";
 
@@ -60,3 +61,5 @@ const Character = ({ params }) => {
 };
 
 export default Character;
+
+export const Head = () => <Seo title="Character" />;

@@ -6,6 +6,7 @@ import { DEFAULT_PAGE } from "../../constans";
 import Pagination from "../components/Pagination";
 import Layout from "../components/Layout";
 import CharactersList from "../components/CharactersList";
+import Seo from "../components/Seo";
 import FilterSettings from "../components/filterSettings";
 import { getCharactersList } from "../services/characterService";
 import { useCharacters } from "../hooks/useCharacters";
@@ -67,6 +68,8 @@ const IndexPage = ({
 };
 
 export default IndexPage;
+
+export const Head = () => <Seo title="Characters List" />;
 
 export const query = graphql`
   query {
