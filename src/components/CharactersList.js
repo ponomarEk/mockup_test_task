@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import * as styles from "../styles/CharactersList.module.css";
+import * as styles from "../styles/components/CharactersList.module.css";
 
 const CharactersList = ({ characters }) => {
   return (

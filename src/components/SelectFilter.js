@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { useCharacters } from "../hooks/useCharacters";
 
-import * as styles from "../styles/SelectFilter.module.css";
+import * as styles from "../styles/components/SelectFilter.module.css";
 
 const SelectFilter = ({ selectType }) => {
   const { name, optionsArray } = selectType;

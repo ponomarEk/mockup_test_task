@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as styles from "../styles/GlobalSpinner.module.css";
+import * as styles from "../styles/components/GlobalSpinner.module.css";
 
 const GlobalSpinner = () => {
   return (

@@ -11,7 +11,7 @@ import { getCharactersList } from "../services/characterService";
 import { useCharacters } from "../hooks/useCharacters";
 import useLoading from "../hooks/useLoadingData";
 
-import * as styles from "../styles/index.module.css";
+import * as styles from "../styles/pages/index.module.css";
 
 const IndexPage = ({
   data: {

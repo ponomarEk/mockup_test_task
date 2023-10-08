@@ -2,7 +2,7 @@ import React from "react";
 import { STATUS, GENDERS } from "../../constans";
 import SelectFilter from "./SelectFilter";
 
-import * as styles from "../styles/FilterSettings.module.css";
+import * as styles from "../styles/components/FilterSettings.module.css";
 
 const FilterSettings = () => {
   return (

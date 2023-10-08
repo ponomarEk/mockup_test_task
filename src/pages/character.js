@@ -5,7 +5,7 @@ import useLoading from "../hooks/useLoadingData";
 import { getCharacterById } from "../services/characterService";
 import Layout from "../components/Layout";
 
-import * as styles from "../styles/character.module.css";
+import * as styles from "../styles/pages/character.module.css";
 
 const Character = ({ params }) => {
   const { "*": id } = params;

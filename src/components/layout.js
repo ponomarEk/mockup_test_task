@@ -5,7 +5,7 @@ import useLoading from "../hooks/useLoadingData";
 import Header from "./Header";
 import GlobalSpinner from "./GlobalSpinner";
 
-import * as styles from "../styles/Layout.module.css";
+import * as styles from "../styles/components/Layout.module.css";
 
 const Layout = ({ children }) => {
   const { isLoading } = useLoading();

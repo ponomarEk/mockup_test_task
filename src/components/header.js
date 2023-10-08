@@ -2,7 +2,7 @@ import React from "react";
 
 import Search from "./Search";
 
-import * as styles from "../styles/Header.module.css";
+import * as styles from "../styles/components/Header.module.css";
 
 const Header = ({ onSearch, setCharactersPage }) => {
   return (

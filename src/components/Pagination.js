@@ -4,7 +4,7 @@ import { DEFAULT_PAGE } from "../../constans";
 
 import { useCharacters } from "../hooks/useCharacters";
 
-import * as styles from "../styles/Pagination.module.css";
+import * as styles from "../styles/components/Pagination.module.css";
 
 const Pagination = ({ totalPages }) => {
   const { handleNextPage, handlePrevPage, page } = useCharacters();

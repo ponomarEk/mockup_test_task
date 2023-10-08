@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 
 import { useCharacters } from "../hooks/useCharacters";
 
-import * as styles from "../styles/Search.module.css";
+import * as styles from "../styles/components/Search.module.css";
 
 const Search = () => {
   const { handleSearch, resetPage } = useCharacters();
