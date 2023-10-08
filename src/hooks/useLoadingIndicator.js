@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useState } from "react";
 
-const LoadingIndicatorContext = createContext();
+const LoadingIndicatorContext = createContext({
+  isLoading: false,
+});
 
 export const LoadingIndicatorProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
